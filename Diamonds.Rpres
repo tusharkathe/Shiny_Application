@@ -1,0 +1,60 @@
+Diamonds DataSet
+========================================================
+author: Tushar Kathe
+date: 09-02-2017
+autosize: true
+
+Overview
+========================================================
+<font size="5">
+The application helps choose Diamonds based on user Input                                               
+User Selects the Characteristics of the Diamond
+
+- Cut
+- Carat
+- Price
+- Color
+- Clarity
+
+Based on user selection the table is diplayed withe the appropriate values filtered from the Diamonds Data set.
+
+Diamonds - Shiny App is hosted on                                                                       
+https://tushar1973.shinyapps.io/shiny_diamond_app/
+
+Source code for ui.R and server.R files are available on the GitHub repo:                               
+https://github.com/tusharkathe/Shiny_Application
+
+</font>
+
+Diamonds Dataset
+========================================================
+
+We use only the First 7 columns from the dataset as they are the most relvant for the application
+and selection for Diamonds
+
+```{r}
+library(ggplot2)
+head(diamonds)[1:7]
+
+
+
+```
+
+Diamond Price per Carat according Color
+========================================================
+
+```{r, echo=FALSE}
+ggplot(diamonds, aes(factor(color), (price/carat), fill=color)) + geom_boxplot() + ggtitle("Diamond Price per Carat according Color") + xlab("Color") + ylab("Diamond Price per Carat U$") + coord_cartesian(ylim=c(0,7500))
+```
+
+
+Application Screenshot
+========================================================
+
+Based on user selection the table is diplayed withe the appropriate values filtered from the Diamonds Data set.                
+
+Shiny Application: Diamond DataSet
+ https://tushar1973.shinyapps.io/shiny_diamond_app/
+
+![Applicatoin Screenshot](figures/diamonapp.png)
+
